@@ -1,9 +1,4 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Foods Dataset
-    Class wrapper for interfacing with the dataset of food images
-"""
+
 import os
 import numpy as np
 import pandas as pd
