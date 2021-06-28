@@ -1,10 +1,4 @@
-'''
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-CNN
-    Constructs a pytorch model for a convolutional neural network
-    Usage: from model.cnn import CNN
-'''
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
