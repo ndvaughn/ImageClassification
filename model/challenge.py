@@ -1,10 +1,4 @@
-'''
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Challenge
-    Constructs a pytorch model for a convolutional neural network
-    Usage: from model.challenge import Challenge
-'''
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -14,7 +8,6 @@ class Challenge(nn.Module):
     def __init__(self):
         super().__init__()
 
-        # TODO:
         self.conv1 = nn.Conv2d(3, 16, (5, 5), stride=(2, 2), padding=2)
         self.conv2 = nn.Conv2d(16, 64, (5, 5), stride=(2, 2), padding=2)
         self.conv3 = nn.Conv2d(64, 128, (5,5), stride=(2,2), padding=2)
@@ -30,7 +23,6 @@ class Challenge(nn.Module):
         self.init_weights()
 
     def init_weights(self):
-        # TODO:
         for conv in [self.conv1, self.conv2, self.conv3]:
             C_in = conv.weight.size(1)
             nn.init.normal_(conv.weight, 0.0, 1 / sqrt(5*5*C_in))
@@ -55,7 +47,6 @@ class Challenge(nn.Module):
 
         z = torch.zeros([N, 5])
 
-        # TODO: forward pass
         z = F.relu(self.conv1(x))
         z = F.relu(self.conv2(z))
         z = self.drop_layer(z)
