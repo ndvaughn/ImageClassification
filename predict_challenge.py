@@ -1,11 +1,3 @@
-'''
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Predict Challenge
-    Runs the challenge model inference on the test dataset and saves the
-    predictions to disk
-    Usage: python predict_challenge.py --uniqname=<uniqname>
-'''
 import argparse
 import torch
 import numpy as np
