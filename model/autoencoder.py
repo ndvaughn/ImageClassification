@@ -1,13 +1,4 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Autoencoder
-    Constructs a pytorch model for a neural autoencoder
-    Autoencoder usage: from model.autoencoder import Autoencoder
-    Autoencoder classifier usage:
-        from model.autoencoder import AutoencoderClassifier
-    Naive method usage: from model.autoencoder import NaiveRecon
-"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -18,7 +9,6 @@ class Autoencoder(nn.Module):
         super().__init__()
         self.repr_dim = repr_dim
 
-        ## Solution: define each layer
         self.pool = nn.MaxPool2d((2,2), stride=(2,2))
         self.fc1 = nn.Linear(768, 128)
         self.fc2 = nn.Linear(128, 64)
@@ -29,8 +19,6 @@ class Autoencoder(nn.Module):
         self.init_weights()
 
     def init_weights(self):
-        # TODO: initialize the parameters for
-        #       [self.fc1, self.fc2, self.fc3, self.deconv]
 
         nn.init.normal_(self.fc1.weight, 0.0, sqrt(0.01/768))
         nn.init.constant(self.fc1.bias, 0.01)
@@ -50,23 +38,18 @@ class Autoencoder(nn.Module):
         return encoded, decoded
 
     def encoder(self, x):
-        # TODO: encoder
         N, C, H, W = x.shape
 
         encoded = self.pool(x)
         encoded = F.elu(self.fc1(encoded.view(N,768)))
         encoded = F.elu(self.fc2(encoded))
 
-        #
-
         return encoded
 
     def decoder(self, encoded):
-        # TODO: decoder
 
         z = F.elu(self.fc3(encoded))
 
-        #
 
         decoded = self._grow_and_crop(z)
         decoded = _normalize(decoded)
@@ -83,12 +66,11 @@ class Autoencoder(nn.Module):
         return decoded
 
 class AutoencoderClassifier(nn.Module):
-    # skip connections
+    # TODO: Add skip connections
     def __init__(self, repr_dim, d_out, n_neurons=32):
         super().__init__()
         self.repr_dim = repr_dim
 
-        # TODO: define each layer
         self.pool = nn.MaxPool2d((2, 2), stride=(2, 2))
         self.fc1 = nn.Linear(768, 128)
         self.fc2 = nn.Linear(128, 64)
@@ -109,7 +91,7 @@ class AutoencoderClassifier(nn.Module):
         return z
 
     def encoder(self, x):
-        # TODO: encoder
+
         N, C, H, W = x.shape
         encoded = self.pool(x)
         encoded = F.elu(self.fc1(encoded.view(N, 768)))
