@@ -1,11 +1,3 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Train Autoencoder
-    Trains an autoencoder to learn a sparse representation of images data
-    Periodically outputs training information, and saves model checkpoints
-    Usage: python train_autoencoder.py
-"""
 import torch
 import numpy as np
 import random
