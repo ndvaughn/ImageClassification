@@ -1,8 +1,3 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Utility functions
-"""
 import os
 import numpy as np
 import matplotlib.pyplot as plt
