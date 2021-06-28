@@ -1,11 +1,3 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Train CNN
-    Trains a convolutional neural network to classify images
-    Periodically outputs training information, and saves model checkpoints
-    Usage: python train_cnn.py
-"""
 import torch
 import numpy as np
 import random
