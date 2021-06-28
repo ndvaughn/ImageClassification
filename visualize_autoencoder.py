@@ -1,13 +1,3 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Visualize Autoencoder
-    For each class, shows side-by-side random validation images, naive
-    reconstructions obtained by downsampling-then-upsampling, and the
-    autoencoder reconstructions. Exit by causing a KeyboardInterrupt
-    (press CTRL-c).
-    Usage: python visualize_autoencoder.py
-"""
 import os
 import random
 
