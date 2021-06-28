@@ -1,11 +1,4 @@
-"""
-EECS 445 - Introduction to Machine Learning
-Winter 2020 - Project 2
-Evaluate Autoencoder
-    Runs inference on an autoencoder to get the per-class performance on the
-    validation data.
-    Usage: python evaluate_autoencoder.py
-"""
+
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
